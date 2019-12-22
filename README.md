@@ -20,7 +20,7 @@ Once the key is bound, you must add the improvement tools to the toolbelt. The m
 
 ### Improving items inside a container
 
-Just hover over the item and press the key. The right tool will be selected and the item will be improved with it. If you choose a stack of items (eg. a group of barrels), the one with the lowest quality will be improved. In case of the item being damaged, it will be repaired automatically before trying to improve it.
+Just hover over the item and press the key. The right tool will be selected and the item will be improved with it. If no appropriate tool is found in the toolbelt, the currently active item will be used instead. If you choose a stack of items (eg. a group of barrels), the one with the lowest quality will be improved. In case of the item being damaged, it will be repaired automatically before trying to improve it.
 
 ### Improving items from the world
 
