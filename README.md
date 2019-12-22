@@ -1,7 +1,10 @@
 # I2Improve
 ## Improved Improved Improve mod for Wurm
 
-This mod is a total re-write of the Improved Improve (https://github.com/munsta0/WUClientImprovedImprove) mod by Munsta0, with additional features added.
+This mod is a total re-write of the [Improved Improve](https://github.com/munsta0/WUClientImprovedImprove) mod by Munsta0, with additional features added. It is an improve mod that automatically chooses the right tool and action to improve an item, working both on items inside containers and items on the world.
+
+## How to install
+Firstly, it requires [Ago's client modloader](https://github.com/ago1024/WurmClientModLauncher/releases/). You can then download the file i2improve.zip and extract its contents inside the **WurmLauncher/mods** folder.
 
 ## How does it work
 
