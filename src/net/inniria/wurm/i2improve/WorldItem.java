@@ -2,10 +2,15 @@ package net.inniria.wurm.i2improve;
 
 
 import com.wurmonline.client.renderer.PickableUnit;
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
 import com.wurmonline.client.game.inventory.InventoryMetaItem;
 
 
 public class WorldItem {
+	Pattern fltPattern = Pattern.compile("([0-9]+[.][0-9]+)");
 	long itemId;
 	String nextTool;
 	boolean damaged;
@@ -38,6 +43,7 @@ public class WorldItem {
 	}
 	
 	public void parseMessage(String message) {
+		// Parse improving messages and update item state accordingly
 		if(message.contains("damage the")) {
 			this.damaged = true;
 		}else if(message.contains("before you try to improve")){
@@ -57,5 +63,12 @@ public class WorldItem {
     	}else if(message.contains("with a stone chisel")) {
     		this.nextTool = "stone chisel";
     	}
+		
+		// Parse damage value of item descriptions
+		String[] msg_parts = message.split(", Dam: ");
+		if(msg_parts.length > 1) {
+			Matcher m = fltPattern.matcher(msg_parts[1]);
+			if(m.find()) this.damaged = (Float.parseFloat(m.group()) > 0);
+		}
 	}
 }
