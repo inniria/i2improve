@@ -48,10 +48,12 @@ public class WorldItem {
 			this.damaged = true;
 		}else if(message.contains("before you try to improve")){
 			this.damaged = true;
-		}else if(message.contains("with a log")){
+		}else if(message.contains("with a log") || message.contains("more log")){
     		this.nextTool = "log";
-		}else if(message.contains("with a rock shards")){
+		}else if(message.contains("with a rock shards") || message.contains("more rock shards")){
 			this.nextTool = "rock shards";
+		}else if(message.contains("with a string") || message.contains("more string")){
+			this.nextTool = "string";
     	}else if(message.contains("use a mallet")){
     		this.nextTool = "mallet";
     	}else if(message.contains("use a file")){
@@ -62,6 +64,12 @@ public class WorldItem {
     		this.nextTool = "carving knife";
     	}else if(message.contains("with a stone chisel")) {
     		this.nextTool = "stone chisel";
+    	}else if(message.contains("some stains")) {
+    		this.nextTool = "water";
+    	}else if(message.contains("must be backstitched") || message.contains("by slipstitching")){
+    		this.nextTool = "needle";
+    	}else if(message.contains("be cut away")){
+    		this.nextTool = "scissors";
     	}
 		
 		// Parse damage value of item descriptions
